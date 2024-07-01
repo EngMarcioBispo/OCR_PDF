@@ -10,12 +10,6 @@ import streamlit as st
 from io import BytesIO
 import re
 
-# Configure a variável de ambiente TESSDATA_PREFIX de forma adequada para Windows
-os.environ['TESSDATA_PREFIX'] = 'C:\\Program Files\\Tesseract-OCR\\tessdata\\'
-
-# Certifique-se de que o pytesseract pode encontrar o executável do Tesseract
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-
 def preprocess_image(image):
     """
     Aplica pré-processamento na imagem para melhorar os resultados do OCR.
