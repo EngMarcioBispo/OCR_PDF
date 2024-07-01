@@ -10,6 +10,12 @@ import streamlit as st
 from io import BytesIO
 import re
 
+# Definindo o caminho do Tesseract manualmente (para ambientes como Streamlit Cloud)
+tesseract_cmd = '/usr/bin/tesseract'
+if not os.path.isfile(tesseract_cmd):
+    tesseract_cmd = '/app/.apt/usr/bin/tesseract'
+pytesseract.pytesseract.tesseract_cmd = tesseract_cmd
+
 def preprocess_image(image):
     """
     Aplica pré-processamento na imagem para melhorar os resultados do OCR.
