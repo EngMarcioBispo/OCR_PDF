@@ -14,7 +14,7 @@ import re
 os.environ['TESSDATA_PREFIX'] = 'C:\\Program Files\\Tesseract-OCR\\tessdata\\'
 
 # Certifique-se de que o pytesseract pode encontrar o executável do Tesseract
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 def preprocess_image(image):
     """
@@ -146,7 +146,7 @@ def pdf_to_single_output_pdf(input_pdf_path):
         pagesize=letter,
         leftMargin=0.5*inch,
         rightMargin=0.5*inch,
-        topMargin=0.3*inch,    # Maior margem superior
+        topMargin=1.0*inch,    # Maior margem superior
         bottomMargin=0.5*inch
     )
     styles = getSampleStyleSheet()
